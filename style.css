@@ -1,0 +1,296 @@
+
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #101018;
+    --cor-superficie: #1b1b29;
+    --cor-destaque: #b7f34a;
+    --cor-secundaria: #a78bfa;
+    --cor-texto: #f5f5f5;
+    --cor-texto-suave: #b6b6c7;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* ========================================
+   2. CABEÇALHO
+======================================== */
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #211b3a, #16251f);
+    border-bottom: 2px solid var(--cor-destaque);
+}
+
+header h1 {
+    font-size: 3rem;
+    color: var(--cor-destaque);
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-top: 8px;
+    color: var(--cor-texto-suave);
+}
+
+/* ========================================
+   3. CONTEÚDO PRINCIPAL
+======================================== */
+
+main {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+.apresentacao {
+    padding: 45px 0 25px;
+    text-align: center;
+}
+
+.apresentacao h2,
+.personagens h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.apresentacao p {
+    color: var(--cor-texto-suave);
+}
+
+/* ========================================
+   4. GALERIA DE PERSONAGENS
+======================================== */
+
+.personagens {
+    padding: 25px 0 50px;
+}
+
+#lista-personagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 25px;
+}
+
+/* ========================================
+   5. RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .apresentacao h2,
+    .personagens h2 {
+        font-size: 1.4rem;
+    }
+
+    #lista-personagens {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   6. RODAPÉ
+======================================== */
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 1px solid #303044;
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   7. CARDS DOS PERSONAGENS
+======================================== */
+
+.card-personagem {
+    background-color: var(--cor-superficie);
+    border: 1px solid #303044;
+    border-radius: 16px;
+    overflow: hidden;
+    padding-bottom: 18px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-personagem:hover {
+    transform: translateY(-6px);
+    border-color: var(--cor-destaque);
+}
+
+.card-personagem img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.card-personagem h3 {
+    color: var(--cor-destaque);
+    font-size: 1.2rem;
+    margin: 15px 10px 8px;
+}
+
+.card-personagem p {
+    color: var(--cor-texto-suave);
+    margin: 5px 10px;
+    font-size: 0.95rem;
+}
+
+/* ========================================
+   8. PESQUISA E FILTROS
+======================================== */
+
+.controles-personagens {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.controles-personagens input,
+.controles-personagens select {
+    padding: 13px 15px;
+    border: 1px solid #303044;
+    border-radius: 10px;
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+    font: inherit;
+    outline: none;
+}
+
+.controles-personagens input {
+    flex: 1;
+    min-width: 0;
+}
+
+.controles-personagens select {
+    cursor: pointer;
+}
+
+.controles-personagens input:focus,
+.controles-personagens select:focus {
+    border-color: var(--cor-destaque);
+}
+
+#mensagem-resultados {
+    color: var(--cor-texto-suave);
+    margin: 12px 0;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .controles-personagens {
+        flex-direction: column;
+    }
+
+    .controles-personagens input,
+    .controles-personagens select {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   9. BOTÃO CARREGAR MAIS
+======================================== */
+
+.area-carregar {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 45px;
+}
+
+#btn-carregar-mais {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--cor-destaque);
+    color: #151515;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#btn-carregar-mais:hover {
+    transform: translateY(-2px);
+}
+
+#btn-carregar-mais:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+/* ========================================
+   10. INDICADORES DE STATUS
+======================================== */
+
+.status-personagem {
+    display: inline-block;
+    margin: 8px auto 0 !important;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem !important;
+    font-weight: bold;
+}
+
+.status-alive {
+    color: #b7f34a !important;
+    background-color: rgba(183, 243, 74, 0.12);
+}
+
+.status-dead {
+    color: #ff7777 !important;
+    background-color: rgba(255, 80, 80, 0.12);
+}
+
+.status-unknown {
+    color: #c4b5fd !important;
+    background-color: rgba(167, 139, 250, 0.12);
+}
+
+/* ========================================
+   11. MELHORIAS DOS CARDS
+======================================== */
+
+.card-personagem {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-personagem:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.card-personagem img {
+    background-color: #252538;
+}
+
+/* ========================================
+   12. ACESSIBILIDADE
+======================================== */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--cor-destaque);
+    outline-offset: 3px;
+}

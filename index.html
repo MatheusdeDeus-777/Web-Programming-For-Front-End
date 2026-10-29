@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CartoonVerse | Universo dos Personagens</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>CartoonVerse</h1>
+        <p>Explore o universo dos seus personagens favoritos!</p>
+    </header>
+
+    <main>
+        <section class="apresentacao">
+            <h2>Conheça os personagens</h2>
+            <p>
+                Descubra personagens incríveis do universo de Rick and Morty.
+            </p>
+        </section>
+
+        <section class="personagens">
+            <h2>Galeria de personagens</h2>
+            <!-- Galeria Personagens (BUSCA) -->
+            <div class="controles-personagens">
+                <input
+                    type="text"
+                    id="campo-busca"
+                    placeholder="Pesquisar personagem pelo nome..."
+                    aria-label="Pesquisar personagem pelo nome"
+                >
+
+                <select id="filtro-status" aria-label="Filtrar por status">
+                    <option value="todos">Todos os status</option>
+                    <option value="Alive">Vivos</option>
+                    <option value="Dead">Mortos</option>
+                    <option value="unknown">Desconhecido</option>
+                </select>
+            </div>
+
+            <p id="mensagem-resultados" aria-live="polite"></p>
+
+
+            <div id="lista-personagens">
+                <!-- Os cards serão inseridos pelo JavaScript -->
+            </div>
+           
+            <div class="area-carregar">
+                <button id="btn-carregar-mais" type="button">
+                    Carregar mais personagens
+                </button>
+            </div>
+ 
+        </section>
+    </main>
+
+    <footer>
+        <p>CartoonVerse - Projeto acadêmico de Front-End</p>
+    </footer>
+
+</body>
+</html>
